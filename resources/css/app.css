@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-brand-950 {
+    background-color: #161950;
+}
+.bg-brand-500 {
+    background-color: #465fff;
+}
+.text-brand-500 {
+    color: #465fff;
+}
+.text-error-500 {
+    color: #f44336;
+}
