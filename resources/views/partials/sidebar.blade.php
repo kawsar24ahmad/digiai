@@ -4,31 +4,20 @@
 >
   <!-- Logo Section -->
   <div
-    :class="sidebarToggle ? 'justify-center' : 'justify-between'"
+    :class="sidebarToggle ? 'justify-center' : 'justify-center'"
     class="flex items-center gap-2 pt-8 pb-7"
   >
-    <a href="{{ url('/') }}" class="flex items-center">
-      <span :class="sidebarToggle ? 'hidden' : 'block'" class="logo">
-  <!-- Light logo (for light mode) -->
-  <img
-    class="block dark:hidden h-8"
-    src="{{ asset('images/logo/logo.svg') }}"
-    alt="Logo Light"
-  />
-  <!-- Dark logo (for dark mode) -->
-  <img
-    class="hidden dark:block h-8"
-    src="{{ asset('images/logo/logo-dark.svg') }}"
-    alt="Logo Dark"
-  />
-</span>
+    <a href="{{ url('/') }}" class="flex items-center ">
+      <div class="text-2xl font-bold flex items-center gap-2">
+    <span class="text-green-500"><i class="fa-solid fa-robot"></i></span>
 
-      <img
-        :class="sidebarToggle ? 'lg:block' : 'hidden'"
-        class="h-8"
-        src="{{ asset('images/logo/logo-icon.svg') }}"
-        alt="Logo Icon"
-      />
+    <span x-show="!sidebarToggle" x-transition
+          class="text-gray-800 dark:text-white">
+        Digi AI
+    </span>
+</div>
+
+
     </a>
   </div>
 

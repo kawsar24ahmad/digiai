@@ -1,17 +1,24 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
+@section('content')
+@php
+$tools = App\Models\Tool::all();
+@endphp
+<h1 class="text-2xl font-bold">All Tools</h1>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
+            <!-- Tools Grid -->
+            <div class="grid grid-cols-1 mt-3 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                @foreach ($tools as $tool )
+                <div class="bg-white p-4 rounded shadow">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl"><img class="w-10 h-10" src="{{ $tool->image }}" alt=""></span>
+                        <div class="font-bold text-lg">{{ $tool->name }}</div>
+                    </div>
+                    <div class="text-sm text-gray-500">{{ $tool->feature }}</div>
+                    <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Use Now</button>
                 </div>
+                @endforeach
+
+
             </div>
-        </div>
-    </div>
-</x-app-layout>
+
+@endsection

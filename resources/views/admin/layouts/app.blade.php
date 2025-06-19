@@ -34,24 +34,24 @@
   >
 
     <!-- ===== Preloader Start ===== -->
-    @include('partials.preloader')
+    @include('admin.partials.preloader')
     <!-- ===== Preloader End ===== -->
 
     <!-- ===== Page Wrapper Start ===== -->
     <div class="flex h-screen overflow-hidden">
       <!-- ===== Sidebar Start ===== -->
-      @include('partials.sidebar')
+      @include('admin.partials.sidebar')
       <!-- ===== Sidebar End ===== -->
 
       <!-- ===== Content Area Start ===== -->
       <div class="relative flex flex-col flex-1 overflow-x-hidden overflow-y-auto">
 
         <!-- Small Device Overlay Start -->
-        @include('partials.overlay')
+        @include('admin.partials.overlay')
         <!-- Small Device Overlay End -->
 
         <!-- ===== Header Start ===== -->
-        @include('partials.header')
+        @include('admin.partials.header')
         <!-- ===== Header End ===== -->
 
         <!-- ===== Main Content Start ===== -->
@@ -66,6 +66,7 @@
       <!-- ===== Content Area End ===== -->
     </div>
     <!-- ===== Page Wrapper End ===== -->
+
     @stack('scripts')
   </body>
 </html>
